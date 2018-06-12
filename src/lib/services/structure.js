@@ -5,7 +5,7 @@ const token = window.localStorage.getItem('user');
 async function loadStructData(token){
   // const user = await store.dispatch(authActions.getCurrentUser);
   // const data = await getUser(user.userName, user.password);
-  const response = await fetch(`http://${server}:${port}/api/v1/department`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/department`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -17,7 +17,7 @@ async function loadStructData(token){
 }
 
 async function addDept(dept){
-  const response = await fetch(`http://${server}:${port}/api/v1/department`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/department`, {
     mode: 'cors',
     method: 'POST',
     headers: {
@@ -31,7 +31,7 @@ async function addDept(dept){
 }
 
 async function delDept(id){
-  const response = await fetch(`http://${server}:${port}/api/v1/department/${id}`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/department/${id}`, {
     mode: 'cors',
     method: 'DELETE',
     headers: {
