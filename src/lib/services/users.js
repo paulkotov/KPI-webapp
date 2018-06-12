@@ -3,7 +3,7 @@ import { server, port } from '../config';
 const token = window.localStorage.getItem('user');
 
 async function loadUsers(){
-  const response = await fetch(`http://${server}:${port}/api/v1/user`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/user`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -15,7 +15,7 @@ async function loadUsers(){
 }
 
 async function addUser(user){
-  const response = await fetch(`http://${server}:${port}/api/v1/user`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/user`, {
     mode: 'cors',
     method: 'POST',
     headers: {
