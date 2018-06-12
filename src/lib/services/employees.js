@@ -5,7 +5,7 @@ const token = window.localStorage.getItem('user');
 async function loadEmplData(){
     // const user = await store.dispatch(authActions.getCurrentUser);
     // const data = await getUser(user.userName, user.password);
-  const response = await fetch(`http://${server}:${port}/api/v1/plan`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/plan`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -17,7 +17,7 @@ async function loadEmplData(){
 }
 
 async function addEmpl(employee) {
-  const response = await fetch(`http://${server}:${port}/api/v1/worker`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/worker`, {
     mode: 'cors',
     method: 'POST',
     headers: {
