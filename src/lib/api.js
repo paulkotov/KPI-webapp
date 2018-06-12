@@ -23,7 +23,7 @@ function isUserUnLogged(){
 }
 
 async function getUser(user, pass){
-  const response = await fetch(`http://${server}:${port}/api/v1/auth/login`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/auth/login`, {
     mode: 'cors',
     method: 'POST',
     headers: {
@@ -34,7 +34,7 @@ async function getUser(user, pass){
   const data = await response.json();
   if (data.token){
     const token = data.token;
-    const userProfile = await fetch(`http://${server}:${port}/api/v1/user/1`, {
+    const userProfile = await fetch(`https://${server}:${port}/api/v1/user/1`, {
       mode: 'cors',
       method: 'GET',
       headers: {
@@ -48,7 +48,7 @@ async function getUser(user, pass){
 }
 
 async function loadUsers(token){
-  const response = await fetch(`http://${server}:${port}/api/v1/user`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/user`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -76,7 +76,7 @@ async function loadStructData(token){
 async function loadPlanData(token){
   // const user = await store.dispatch(authActions.getCurrentUser);
   // const data = await getUser(user.userName, user.password);
-  const response = await fetch(`http://${server}:${port}/api/v1/plan`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/plan`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -98,47 +98,5 @@ function loadDataFile(event){
   fileReader.readAsDataURL(file);
   return true;
 }
-
-// async function savePokemon(pokemon) {
-//   await fetch(`http://${server}/` ,{
-//     method:  'POST',
-//     credentials: 'include',
-//     headers: {  
-//       'Content-Type':'application/json' 
-//     },
-//     body: JSON.stringify(pokemon)
-//   }).then(()=> {alert(`${pokemon.name} savedUser`);
-//   });
-// }
-
-// function delPokemon(pokemon){
-//   fetch(`http://paulkotov.localtest.me:5000/pokemons/del/${pokemon.name}` ,{
-//     method:  'GET',
-//     credentials: 'include',
-//     headers: {  
-//       'Content-Type':'application/json' 
-//     }
-//   }).then(()=> {alert(`${pokemon.name} deleted`); });
-// }
-
-// function LoadOuterData(){
-//   return fetch('https://pokeapi.co/api/v2/pokemon/?limit=1000' ,{
-//     mode: 'cors',
-//     method:  'GET',
-//     headers: {
-//       'Content-type': 'plain/text'
-//     }
-//   }).then(r => r.json()); 
-// }
-
-// function LoadDBData(){
-//   return fetch('http://paulkotov.localtest.me:5000/pokemons/showall', {
-//     method:  'GET',
-//     credentials: 'include',
-//     headers: {
-//       'Content-type': 'plain/text'
-//     }
-//   }).then(r => r.json());
-// }
 
 export { isUserUnLogged, isObjEmpty, getUser, loadUsers, loadStructData, loadPlanData, loadDataFile };
