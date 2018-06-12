@@ -5,7 +5,7 @@ const token = window.localStorage.getItem('user');
 async function loadPlanData(){
   // const user = await store.dispatch(authActions.getCurrentUser);
   // const data = await getUser(user.userName, user.password);
-  const response = await fetch(`http://${server}:${port}/api/v1/plan`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/plan`, {
     mode: 'cors',
     method: 'GET',
     headers: {
@@ -17,7 +17,7 @@ async function loadPlanData(){
 }
 
 async function addPlan(plan){
-  const response = await fetch(`http://${server}:${port}/api/v1/plan`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/plan`, {
     mode: 'cors',
     method: 'POST',
     headers: {
@@ -44,7 +44,7 @@ async function delPlan(id){
 }
 
 async function editPlan(id, plan){
-  const response = await fetch(`http://${server}:${port}/api/v1/plan/${id}`, {
+  const response = await fetch(`https://${server}:${port}/api/v1/plan/${id}`, {
     mode: 'cors',
     method: 'PUT',
     headers: {
